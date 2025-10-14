@@ -8,7 +8,7 @@ export default function FetchProducts() {
     let productObject = await response.json()
     setProducts(productObject.products)
     }
-    useEffect(()=>{fetchAllProducts()}, []) // used to handle the sideEffect of useState
+    useEffect(()=>{fetchAllProducts()}) // used to handle the sideEffect of useState
   return (
     <div>
       <DisplayProducts productArray={products}/>

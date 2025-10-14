@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
 
 export default function FetchProductById() {
     let urlParameter = useParams()
@@ -10,7 +11,7 @@ export default function FetchProductById() {
         let productObject = await response.json()
         setProduct(productObject)
     }
-    useEffect(()=>{ FetchProductById(urlParameter.productId)}, [])
+    useEffect(()=>{ FetchProductById(urlParameter.productId)})
   return (
     <div>
       

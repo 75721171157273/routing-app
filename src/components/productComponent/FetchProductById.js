@@ -13,10 +13,11 @@ export default function FetchProductById() {
         let productObject = await response.json()
         setProduct(productObject)
     }
-    useEffect(()=>{ FetchProductById(urlParameter.productId)})
+    useEffect(()=>{ FetchProductById(productId)}, [productId])
   return (
     <div>
       {product && <DisplayProductById productObject={product}/>}
     </div>
   )
 }
+
